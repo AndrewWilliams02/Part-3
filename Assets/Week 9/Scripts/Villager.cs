@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static Chest;
 
 public class Villager : MonoBehaviour
 {
@@ -83,5 +84,11 @@ public class Villager : MonoBehaviour
     protected virtual void Attack()
     {
         animator.SetTrigger("Attack");
+    }
+
+    public virtual ChestType CanOpen()
+    {
+        return ChestType.Villager;
+
     }
 }

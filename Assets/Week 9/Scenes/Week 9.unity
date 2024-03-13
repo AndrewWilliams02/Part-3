@@ -1403,6 +1403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe55687bc76ec745801e395e2b24f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whoCanOpen: 2
   animator: {fileID: 6491913701516345902}
 --- !u!1001 &676232074
 PrefabInstance:
@@ -2404,6 +2405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe55687bc76ec745801e395e2b24f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whoCanOpen: 0
   animator: {fileID: 6491913701707544840}
 --- !u!1 &1322579541
 GameObject:
@@ -3813,6 +3815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe55687bc76ec745801e395e2b24f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whoCanOpen: 3
   animator: {fileID: 6491913700987384211}
 --- !u!212 &150802953268865269
 SpriteRenderer:
@@ -4452,7 +4455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5008454032956234274}
   - component: {fileID: 4058482881228193157}
-  - component: {fileID: 7352655648354317131}
+  - component: {fileID: 5008454032956234275}
   - component: {fileID: 4499165781864035062}
   - component: {fileID: 3152632007069524077}
   m_Layer: 0
@@ -6081,6 +6084,19 @@ Transform:
   - {fileID: 1706716593571657851}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5008454032956234275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797549100245190485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c223208fb5a094493bb0a05c4348cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlight: {fileID: 6545997943602628296}
 --- !u!212 &5192610755699568078
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7082,19 +7098,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7352655648354317131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797549100245190485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f278b0413d5bb14e912abd94ce4e01a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlight: {fileID: 6545997943602628296}
 --- !u!212 &7454560790921783272
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8148,6 +8151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe55687bc76ec745801e395e2b24f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whoCanOpen: 1
   animator: {fileID: 6491913701438405644}
 --- !u!212 &8880890978940214816
 SpriteRenderer:
