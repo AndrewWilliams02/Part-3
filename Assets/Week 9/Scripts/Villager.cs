@@ -6,7 +6,7 @@ using static Chest;
 
 public class Villager : MonoBehaviour
 {
-    Rigidbody2D rb;
+    protected Rigidbody2D rb;
     Animator animator;
 
     bool clickingOnSelf;
@@ -14,7 +14,8 @@ public class Villager : MonoBehaviour
     public GameObject highlight;
 
     protected Vector2 destination;
-    Vector2 movement;
+    protected Vector2 movement;
+    protected float direction;
     float speed = 3;
 
     void Start()
@@ -49,10 +50,12 @@ public class Villager : MonoBehaviour
         if(movement.x > 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            direction = 1;
         }
         else if (movement.x < 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
+            direction = -1;
         }
 
         //stop moving if we're close enough to the target
