@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static Chest;
 
 public class Villager : MonoBehaviour
 {
-    protected Rigidbody2D rb;
+    Rigidbody2D rb;
     Animator animator;
 
     bool clickingOnSelf;
@@ -14,9 +13,8 @@ public class Villager : MonoBehaviour
     public GameObject highlight;
 
     protected Vector2 destination;
-    protected Vector2 movement;
-    protected float direction;
-    float speed = 3;
+    Vector2 movement;
+    protected float speed = 3;
 
     void Start()
     {
@@ -50,24 +48,23 @@ public class Villager : MonoBehaviour
         if(movement.x > 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
-            direction = 1;
         }
         else if (movement.x < 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
-            direction = -1;
         }
 
         //stop moving if we're close enough to the target
         if (movement.magnitude < 0.1)
         {
             movement = Vector2.zero;
+            speed = 3;
         }
 
         rb.MovePosition(rb.position + movement.normalized * speed * Time.deltaTime);
     }
 
-    void Update()
+    protected virtual void Update()
     {
         //left click: move to the click location
         if (Input.GetMouseButtonDown(0) && isSelected && !clickingOnSelf)
@@ -92,6 +89,5 @@ public class Villager : MonoBehaviour
     public virtual ChestType CanOpen()
     {
         return ChestType.Villager;
-
     }
 }
