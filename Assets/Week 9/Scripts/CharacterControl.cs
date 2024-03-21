@@ -30,6 +30,15 @@ public class CharacterControl : MonoBehaviour
         }
     }
 
+    public void ChangeCharacterScale(float scale)
+    {
+        if (scale >= 0.5 && scale <= 2)
+        {
+            Villager.villagerScale = scale;
+            SelectedVillager.transform.localScale = new Vector3(scale, scale, scale);
+        }
+    }
+
     private void Start()
     {
         Instance = this;
