@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class RapidBullet : Bullet
 {
-    private float elapsedTime = 0f;
-    private float duration = 0.75f;
+    private float elapsedTime = 0f; //Variable that tracks time for Lerp
+    private float duration = 0.5f; //Variable that decides length of Lerp
 
-    private Vector3 initialSize;
-    private Vector3 currentSize;
-    private Vector3 targetSize;
+    private Vector3 initialSize; //Variable to get the initial size of bullet
+    private Vector3 targetSize; //Variable to set the target size of bullet
+
+    //Function to intialize Lerp variable as well as start bullet shrink coroutine
     private void Start()
     {
         initialSize = transform.localScale;
         targetSize = new Vector3(0, 0, 0);
         StartCoroutine(ShrinkBullet());
     }
+
+    //Overridden function to set bullet speed
     protected override void SetBulletSpeed()
     {
         bulletSpeed = 10f;
     }
+
+    //Coroutine function to shrink bullet to disappear over the span of 0.5 seconds after being spawned in
     IEnumerator ShrinkBullet()
     {
         while (elapsedTime < duration)
@@ -29,6 +34,6 @@ public class RapidBullet : Bullet
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        transform.localScale = targetSize;
+        transform.localScale = targetSize; //Ensures target size is reached
     }
 }
